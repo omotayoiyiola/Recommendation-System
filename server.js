@@ -1,20 +1,20 @@
-// server.js
 const express = require("express");
 const { getRecommendations } = require("./recommendation_service");
 
 const app = express();
-const port = 4000;
+const PORT = 4000;
 
 app.get("/recommend/:userId", async (req, res) => {
   try {
-    const userId = req.params.userId;
+    const userId = parseInt(req.params.userId, 10);
     const recommendations = await getRecommendations(userId);
-    res.json(recommendations);
+    res.json({ recommendations });
   } catch (error) {
-    res.status(500).send(error.message);
+    console.error("Error in /recommend/:userId:", error);
+    res.status(500).json({ error: error.message });
   }
 });
 
-app.listen(port, () => {
-  console.log(`Recommendation system running on http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`Recommendation system running on http://localhost:${PORT}`);
 });
