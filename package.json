@@ -1,0 +1,17 @@
+{
+  "name": "recommendation-system",
+  "version": "1.0.0",
+  "description": "## Overview",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tensorflow/tfjs-node": "^4.20.0",
+    "danfojs-node": "^1.1.2",
+    "redis": "^4.7.0"
+  }
+}
