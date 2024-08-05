@@ -52,4 +52,10 @@ async function trainModel() {
   return { model, userIds, productIds };
 }
 
-module.exports = { trainModel };
+async function saveModel(model) {
+  const savePath = "file://./"; // Save the model in the root directory
+  await model.save(savePath);
+  console.log("Model saved to", savePath);
+}
+
+module.exports = { trainModel, saveModel };
