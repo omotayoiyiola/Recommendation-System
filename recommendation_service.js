@@ -1,20 +1,22 @@
-// recommendation_service.js
 const tf = require("@tensorflow/tfjs-node");
 const redis = require("redis");
+const { promisify } = require("util");
+
 const client = redis.createClient();
+const getAsync = promisify(client.get).bind(client);
 
 client.on("error", (err) => {
   console.log("Redis client error:", err);
 });
 
 async function loadModel() {
-  return await tf.loadLayersModel("file://./model/model.json");
+  return await tf.loadLayersModel("file://./model.json"); // Ensure this points to the correct location
 }
 
 async function getRecommendations(userId) {
   const model = await loadModel();
-  const userIds = JSON.parse(await client.getAsync("userIds"));
-  const productIds = JSON.parse(await client.getAsync("productIds"));
+  const userIds = JSON.parse(await getAsync("userIds"));
+  const productIds = JSON.parse(await getAsync("productIds"));
 
   const userIndex = userIds.indexOf(userId);
   if (userIndex === -1) {

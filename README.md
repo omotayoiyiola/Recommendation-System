@@ -28,7 +28,7 @@ This project implements a personalized product recommendation system using machi
 3. **Install the required packages:**
 
    ```bash
-   npm install @tensorflow/tfjs-node danfojs-node redis
+   npm install @tensorflow/tfjs-node danfojs-node redis express
    ```
 
 4. **Ensure Redis is installed and running on your machine:**
@@ -68,31 +68,18 @@ This project implements a personalized product recommendation system using machi
 ## Continuous Improvement Strategy
 
 1. **A/B Testing:**
+
    - Implement A/B testing to compare different recommendation algorithms and determine the most effective one.
 
 2. **User Feedback:**
+
    - Collect user feedback on recommendations to identify areas for improvement.
    - Use feedback to retrain the model regularly.
 
 3. **Monitoring and Logging:**
+
    - Monitor the performance of the recommendation engine in real-time.
    - Log interactions and outcomes to identify trends and patterns.
 
 4. **Regular Retraining:**
    - Regularly retrain the model with updated data to improve accuracy and adapt to changing user preferences.
-
-## Submission Instructions
-
-1. **Ensure your code is functional and meets the requirements outlined in the project description.**
-2. **If your demo requires installation, make sure there are clear instructions so that evaluators can access it easily.**
-3. **Make sure anyone can access your final outputs so that they can be evaluated.**
-
-## License
-
-This project is licensed under the MIT License.
-```
-
-### Notes
-
-- Replace `<repository_url>` with the actual URL of your repository.
-- Make sure to verify that all the steps and commands in the README are correct and work as expected before submission.
